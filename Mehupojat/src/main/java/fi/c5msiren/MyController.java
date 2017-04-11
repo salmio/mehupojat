@@ -36,6 +36,13 @@ public class MyController {
     public Product fetchProductLocation(@PathVariable long id) {
         return products.findById(id);
     }
+    
+    @RequestMapping(value = "/products/{id}",  method=RequestMethod.DELETE)
+    public void deleteProduct(@PathVariable long id) {
+        
+        products.delete(id);
+    }
+    
 
     //curl -H "Content-type: application/json" -X POST http://localhost:8080/brands -d "{\"name\": \"BrandNimi\"}"
     @RequestMapping(value = "/brands",  method=RequestMethod.POST)
