@@ -20,6 +20,9 @@ public class MyController {
 
     @Autowired
     private CategoryRepository categories;
+    
+    @Autowired
+    private UserRepository users;
 
     // curl -H "Content-type: application/json" -X POST http://localhost:8080/products -d "{\"name\": \"Testi01\", \"price\": 42.0, \"description\": \"Kuvaus\", \"brand\": \"http://localhost:8080/brands/1\"}"
     @RequestMapping(value = "/products",  method=RequestMethod.POST)
@@ -74,4 +77,21 @@ public class MyController {
     public Category fetchCategoryLocation(@PathVariable long id) {
         return categories.findById(id);
     }
+    
+    //  curl -H "Content-type: application/json" -X POST http://localhost:8080/users -d "{\"password\": \"testipw\", \"email\": \"testi@email.com\", \"address\": \"testikatu\" }"
+    @RequestMapping(value = "/users",  method=RequestMethod.POST)
+    public void saveUser(@RequestBody User user) {
+        users.save(user);
+    }
+    
+    @RequestMapping(value = "/users",  method=RequestMethod.GET)
+    public Iterable<User> fetchAllUsers() {
+        return users.findAll();
+    }
+    
+    @RequestMapping(value = "/users/{id}",  method=RequestMethod.GET)
+    public User fetchSingleUser(@PathVariable long id) {
+        return users.findById(id);
+    }
+    
 }
