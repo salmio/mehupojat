@@ -42,7 +42,6 @@ public class MyController {
     
     @RequestMapping(value = "/products/{id}",  method=RequestMethod.DELETE)
     public void deleteProduct(@PathVariable long id) {
-        
         products.delete(id);
     }
     
@@ -92,6 +91,11 @@ public class MyController {
     @RequestMapping(value = "/users/{id}",  method=RequestMethod.GET)
     public User fetchSingleUser(@PathVariable long id) {
         return users.findById(id);
+    }
+    
+    @RequestMapping(value = "/users/{id}",  method=RequestMethod.DELETE)
+    public void deleteUser(@PathVariable long id) {
+        users.delete(id);
     }
     
 }
