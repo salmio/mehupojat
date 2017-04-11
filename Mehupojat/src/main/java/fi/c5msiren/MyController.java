@@ -39,6 +39,7 @@ public class MyController {
     
     @RequestMapping(value = "/products/{id}",  method=RequestMethod.DELETE)
     public void deleteProduct(@PathVariable long id) {
+        
         products.delete(id);
     }
     
