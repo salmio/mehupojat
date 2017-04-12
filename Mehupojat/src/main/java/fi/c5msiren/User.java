@@ -5,18 +5,19 @@
  */
 package fi.c5msiren;
 
+import java.util.List;
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToOne;
+import javax.persistence.ManyToMany;
+
 
 /**
  *
  * @author Oskari
  */
-
 @Entity
 public class User {
     
@@ -27,13 +28,13 @@ public class User {
     private String email;
     private String password;
     
-    @OneToOne(cascade = CascadeType.ALL)
-    private Address address;
+    @ManyToMany(cascade = CascadeType.ALL)
+    private List<Address> addresses;
 
-    public User(String email, String password, Address address) {
+    public User(String email, String password, List<Address> addresses) {
         this.email = email;
         this.password = password;
-        this.address = address;
+        this.addresses = addresses;
     }
 
     
@@ -60,12 +61,12 @@ public class User {
         this.password = password;
     }
 
-    public Address getAddress() {
-        return address;
+    public List<Address> getAddresses() {
+        return addresses;
     }
 
-    public void setAddress(Address address) {
-        this.address = address;
+    public void setAddresses(List<Address> addresses) {
+        this.addresses = addresses;
     }
     
     
