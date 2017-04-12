@@ -20,7 +20,10 @@ public class MyController {
 
     @Autowired
     private CategoryRepository categories;
-    
+
+    /**
+     * Database attribute containing users
+     */    
     @Autowired
     private UserRepository users;
 
@@ -40,6 +43,11 @@ public class MyController {
         return products.findById(id);
     }
     
+    /**
+     * Method to delete a product from the database
+     * 
+     * @param id id of product to delete
+     */
     @RequestMapping(value = "/products/{id}",  method=RequestMethod.DELETE)
     public void deleteProduct(@PathVariable long id) {
         products.delete(id);
@@ -77,22 +85,46 @@ public class MyController {
         return categories.findById(id);
     }
     
-    //  curl -H "Content-type: application/json" -X POST http://localhost:8080/users -d "{\"password\": \"testipw\", \"email\": \"testi@email.com\", \"address\": \"testikatu\" }"
+    
+    
+     //  curl -H "Content-type: application/json" -X POST http://localhos80/users -d "{\"password\": \"testipw\", \"email\": \"testi@email.com\", \"addresses\": [{\"streetAddress\":\"kolmaskatu\",\"town\":\"Helsinki\",\"country\":\"Finland\",\"postalCode\":272}] }"
+    /**
+     * Method to add an user to the database
+     * 
+     * @param user user in json form to add to database
+     */
     @RequestMapping(value = "/users",  method=RequestMethod.POST)
     public void saveUser(@RequestBody User user) {
         users.save(user);
     }
     
+    
+    /**
+     * Method to get all users from database
+     * 
+     * @return list of all users from database
+     */
     @RequestMapping(value = "/users",  method=RequestMethod.GET)
     public Iterable<User> fetchAllUsers() {
         return users.findAll();
     }
     
+    /**
+     * Method for getting a single user out of database
+     * 
+     * @param id id of user to get
+     * @return corresponding User from database
+     */
     @RequestMapping(value = "/users/{id}",  method=RequestMethod.GET)
     public User fetchSingleUser(@PathVariable long id) {
         return users.findById(id);
     }
     
+    /**
+     * Method for deleting an user from the databse
+     * 
+     * @param id id of the user to delete
+     */
     @RequestMapping(value = "/users/{id}",  method=RequestMethod.DELETE)
     public void deleteUser(@PathVariable long id) {
         users.delete(id);
