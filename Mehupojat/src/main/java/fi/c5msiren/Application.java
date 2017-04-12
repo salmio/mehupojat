@@ -1,7 +1,7 @@
 package fi.c5msiren;
 
 import org.h2.server.web.WebServlet;
-import javax.transaction.Transactional;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.boot.web.servlet.ServletRegistrationBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -110,8 +110,11 @@ public class Application implements CommandLineRunner {
     }
 
     //localhost:8080/console JDBC URL: jdbc:h2:mem:testdb
+  
     /**
      * Creates site to connect to embedded database
+     * 
+     * @return created bean
      */
     @Bean
     public ServletRegistrationBean h2servletRegistration() {

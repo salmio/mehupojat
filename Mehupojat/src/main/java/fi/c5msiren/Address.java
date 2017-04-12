@@ -20,19 +20,26 @@ public class Address {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
 
+    /* Attribute for user's addresses streetAddress */
     private String streetAddress;
+    
+    /* Attribute to hold user's addresses postal code */
     private int postalCode;
+    
+    /* Attribute for user's addresses town */
     private String town;
+    
+    /* Attribute for user's addresses country */
     private String country;
 
     
     /**
      * Constructor to initialize an Address entity
      * 
-     * @param streetAddress
-     * @param town
-     * @param country
-     * @param postalCode 
+     * @param streetAddress streetAddress to be set
+     * @param town town to be set
+     * @param country country to be set
+     * @param postalCode postalcode to be set
      */
     public Address(String streetAddress, String town, String country, int postalCode) {
         this.streetAddress = streetAddress;
