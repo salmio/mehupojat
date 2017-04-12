@@ -5,19 +5,31 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.beans.factory.annotation.Autowired;
 
-// This class acts as a controller.
-// Usually when using @Controller, you will use also @RequestMapping
-// mvn compile
-// mvn spring-boot:run
+/**
+ * This class acts as a controller
+ *
+ * @author Miika
+ * @version 2017.4.12
+ * @since 1.8
+ */
 @RestController
 public class MyController {
 
+    /**
+     * Database attribute containing products
+     */   
     @Autowired
     private ProductRepository products;
 
+    /**
+     * Database attribute containing brands
+     */   
     @Autowired
     private BrandRepository brands;
 
+    /**
+     * Database attribute containing categories
+     */   
     @Autowired
     private CategoryRepository categories;
 
@@ -28,16 +40,29 @@ public class MyController {
     private UserRepository users;
 
     // curl -H "Content-type: application/json" -X POST http://localhost:8080/products -d "{\"name\": \"Testi01\", \"price\": 42.0, \"description\": \"Kuvaus\", \"brand\": \"http://localhost:8080/brands/1\"}"
+    /**
+     * Method to save a product to the database
+     * 
+     * @param p Product to be added to database
+     */
     @RequestMapping(value = "/products",  method=RequestMethod.POST)
-    public void saveProductLocation(@RequestBody Product l) {
-        products.save(l);
+    public void saveProductLocation(@RequestBody Product p) {
+        products.save(p);
     }
 
+    /**
+     * Method to fetch all products from the database
+     */
     @RequestMapping(value = "/products",  method=RequestMethod.GET)
     public Iterable<Product> fetchProductLocation() {
         return products.findAll();
     }
 
+    /**
+     * Method to fetch a product from the database
+     * 
+     * @param id id of product to fetch
+     */
     @RequestMapping(value = "/products/{id}",  method=RequestMethod.GET)
     public Product fetchProductLocation(@PathVariable long id) {
         return products.findById(id);
@@ -55,31 +80,57 @@ public class MyController {
     
 
     //curl -H "Content-type: application/json" -X POST http://localhost:8080/brands -d "{\"name\": \"BrandNimi\"}"
+    /**
+     * Method to save a brand to the database
+     * 
+     * @param b Brand to be added to database
+     */
     @RequestMapping(value = "/brands",  method=RequestMethod.POST)
     public void saveBrandLocation(@RequestBody Brand b) {
         brands.save(b);
     }
 
+    /**
+     * Method to fetch all brands from the database
+     */
     @RequestMapping(value = "/brands",  method=RequestMethod.GET)
     public Iterable<Brand> fetchBrandLocation() {
         return brands.findAll();
     }
 
+    /**
+     * Method to fetch a brand from the database
+     * 
+     * @param id id of brand to fetch
+     */
     @RequestMapping(value = "/brands/{id}",  method=RequestMethod.GET)
     public Brand fetchBrandLocation(@PathVariable long id) {
         return brands.findById(id);
     }
 
+    /**
+     * Method to save a category to the database
+     * 
+     * @param c Category to be added to database
+     */
     @RequestMapping(value = "/categories",  method=RequestMethod.POST)
     public void saveCategoryLocation(@RequestBody Category c) {
         categories.save(c);
     }
 
+    /**
+     * Method to fetch all categories from the database
+     */
     @RequestMapping(value = "/categories",  method=RequestMethod.GET)
     public Iterable<Category> fetchCategoryLocation() {
         return categories.findAll();
     }
 
+    /**
+     * Method to fetch a category from the database
+     * 
+     * @param id id of category to fetch
+     */
     @RequestMapping(value = "/categories/{id}",  method=RequestMethod.GET)
     public Category fetchCategoryLocation(@PathVariable long id) {
         return categories.findById(id);
