@@ -23,6 +23,9 @@ public class Application implements CommandLineRunner {
     @Autowired
     private CategoryRepository categories;
 
+    @Autowired
+    private UserRepository users;
+
     public static void main(String[] args) {
         SpringApplication.run(Application.class, args);
     }
@@ -41,7 +44,7 @@ public class Application implements CommandLineRunner {
         categoryListOne.add(categoryA);
         categoryListTwo.add(categoryA);
         categoryListTwo.add(categoryB);
-        
+
         Brand brandA = new Brand("Kokis");
         Brand brandB = new Brand("Pepsi");
         brands.save(brandA);
@@ -55,12 +58,32 @@ public class Application implements CommandLineRunner {
         products.save(productA);
         products.save(productB);
         products.save(productC);
+
+        List<Address> addressListA = new ArrayList<>();
+        List<Address> addressListB = new ArrayList<>();
+        List<Address> addressListC = new ArrayList<>();
+
+        Address addressA = new Address("Alakatu", "Helsinki", "Finland", 420);
+        Address addressB = new Address("toinenkatu", "Trauma", "Kuusamo", 66666);
+        Address addressC = new Address("Alakatu", "Helsinki", "Finland", 23899);
+
+        addressListA.add(addressA);
+        addressListA.add(addressB);
+        addressListB.add(addressB);
+        addressListC.add(addressC);
+
+        User userA = new User("test@email.com", "kalapoliisi", addressListA);
+        User userB = new User("lintumies@hotmale.com", "pyykko", addressListB);
+        User userC = new User("enthusiast@luukku.com", "yuotila", addressListC);
+        users.save(userA);
+        users.save(userB);
+        users.save(userC);
     }
 
     //localhost:8080/console JDBC URL: jdbc:h2:mem:testdb
     @Bean
-    public ServletRegistrationBean h2servletRegistration(){
-        ServletRegistrationBean registrationBean = new ServletRegistrationBean( new WebServlet());
+    public ServletRegistrationBean h2servletRegistration() {
+        ServletRegistrationBean registrationBean = new ServletRegistrationBean(new WebServlet());
         registrationBean.addUrlMappings("/console/*");
         return registrationBean;
     }
