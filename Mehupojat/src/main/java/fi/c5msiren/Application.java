@@ -11,25 +11,54 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.beans.factory.annotation.Autowired;
 import java.util.*;
 
+/**
+ * Class for starting the application
+ *
+ * @author Miika
+ * @version 2017.4.12
+ * @since 1.8
+ */
 @SpringBootApplication
 public class Application implements CommandLineRunner {
 
+    /**
+     * Database attribute containing products
+     */   
     @Autowired
     private ProductRepository products;
 
+    /**
+     * Database attribute containing brands
+     */   
     @Autowired
     private BrandRepository brands;
 
+    /**
+     * Database attribute containing categories
+     */   
     @Autowired
     private CategoryRepository categories;
 
+    /**
+     * Database attribute containing users
+     */   
     @Autowired
     private UserRepository users;
 
+    /**
+     * Starts the spring application
+     *
+     * @param args not used
+     */
     public static void main(String[] args) {
         SpringApplication.run(Application.class, args);
     }
 
+    /**
+     * Inputs data to the embedded database at the start
+     *
+     * @param strings not used
+     */
     @Override
     @Transactional
     public void run(String... strings) throws Exception {
@@ -81,6 +110,9 @@ public class Application implements CommandLineRunner {
     }
 
     //localhost:8080/console JDBC URL: jdbc:h2:mem:testdb
+    /**
+     * Creates site to connect to embedded database
+     */
     @Bean
     public ServletRegistrationBean h2servletRegistration() {
         ServletRegistrationBean registrationBean = new ServletRegistrationBean(new WebServlet());
