@@ -20,9 +20,16 @@ public class Address {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
 
+    /* Attribute for user's addresses streetAddress */
     private String streetAddress;
+    
+    /* Attribute to hold user's addresses postal code */
     private int postalCode;
+    
+    /* Attribute for user's addresses town */
     private String town;
+    
+    /* Attribute for user's addresses country */
     private String country;
 
     
