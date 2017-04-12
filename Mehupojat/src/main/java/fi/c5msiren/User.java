@@ -34,8 +34,7 @@ public class User {
     private List<Address> addresses;
 
     /**
-     *  Constructor for creating a new User entity object
-     * 
+     *
      * @param email Email to be set for user
      * @param password Password to be set for user
      * @param addresses Addresses to be set for user

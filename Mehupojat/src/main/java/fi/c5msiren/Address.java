@@ -36,10 +36,10 @@ public class Address {
     /**
      * Constructor to initialize an Address entity
      * 
-     * @param streetAddress
-     * @param town
-     * @param country
-     * @param postalCode 
+     * @param streetAddress streetAddress to be set
+     * @param town town to be set
+     * @param country country to be set
+     * @param postalCode postalcode to be set
      */
     public Address(String streetAddress, String town, String country, int postalCode) {
         this.streetAddress = streetAddress;
