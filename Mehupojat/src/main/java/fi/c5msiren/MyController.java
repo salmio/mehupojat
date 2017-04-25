@@ -46,7 +46,7 @@ public class MyController {
      * @param p Product to be added to database
      */
     @RequestMapping(value = "/products",  method=RequestMethod.POST)
-    public void saveProductLocation(@RequestBody Product p) {
+    public void saveProduct(@RequestBody Product p) {
         products.save(p);
     }
 
@@ -54,7 +54,7 @@ public class MyController {
      * Method to fetch all products from the database
      */
     @RequestMapping(value = "/products",  method=RequestMethod.GET)
-    public Iterable<Product> fetchProductLocation() {
+    public Iterable<Product> fetchProduct() {
         return products.findAll();
     }
 
@@ -64,7 +64,7 @@ public class MyController {
      * @param id id of product to fetch
      */
     @RequestMapping(value = "/products/{id}",  method=RequestMethod.GET)
-    public Product fetchProductLocation(@PathVariable long id) {
+    public Product fetchProduct(@PathVariable long id) {
         return products.findById(id);
     }
     
@@ -77,6 +77,22 @@ public class MyController {
     public void deleteProduct(@PathVariable long id) {
         products.delete(id);
     }
+
+    /**
+     * Method to update a product in the database
+     * 
+     * @param id id of product to update
+     */
+    @RequestMapping(value = "/products/{id}/update",  method=RequestMethod.POST)
+    public void updateProduct(@PathVariable long id, @RequestBody Product newProduct) {
+        Product oldProduct = products.findById(id);
+        oldProduct.setName(newProduct.getName());
+        oldProduct.setPrice(newProduct.getPrice());
+        oldProduct.setDescription(newProduct.getDescription());
+        oldProduct.setBrand(newProduct.getBrand());
+        oldProduct.setCategories(newProduct.getCategories());
+        products.save(oldProduct);
+    }
     
 
     //curl -H "Content-type: application/json" -X POST http://localhost:8080/brands -d "{\"name\": \"BrandNimi\"}"
@@ -86,7 +102,7 @@ public class MyController {
      * @param b Brand to be added to database
      */
     @RequestMapping(value = "/brands",  method=RequestMethod.POST)
-    public void saveBrandLocation(@RequestBody Brand b) {
+    public void saveBrand(@RequestBody Brand b) {
         brands.save(b);
     }
 
@@ -94,7 +110,7 @@ public class MyController {
      * Method to fetch all brands from the database
      */
     @RequestMapping(value = "/brands",  method=RequestMethod.GET)
-    public Iterable<Brand> fetchBrandLocation() {
+    public Iterable<Brand> fetchBrand() {
         return brands.findAll();
     }
 
@@ -104,7 +120,7 @@ public class MyController {
      * @param id id of brand to fetch
      */
     @RequestMapping(value = "/brands/{id}",  method=RequestMethod.GET)
-    public Brand fetchBrandLocation(@PathVariable long id) {
+    public Brand fetchBrand(@PathVariable long id) {
         return brands.findById(id);
     }
 
@@ -114,7 +130,7 @@ public class MyController {
      * @param c Category to be added to database
      */
     @RequestMapping(value = "/categories",  method=RequestMethod.POST)
-    public void saveCategoryLocation(@RequestBody Category c) {
+    public void saveCategory(@RequestBody Category c) {
         categories.save(c);
     }
 
@@ -122,7 +138,7 @@ public class MyController {
      * Method to fetch all categories from the database
      */
     @RequestMapping(value = "/categories",  method=RequestMethod.GET)
-    public Iterable<Category> fetchCategoryLocation() {
+    public Iterable<Category> fetchCategory() {
         return categories.findAll();
     }
 
@@ -132,7 +148,7 @@ public class MyController {
      * @param id id of category to fetch
      */
     @RequestMapping(value = "/categories/{id}",  method=RequestMethod.GET)
-    public Category fetchCategoryLocation(@PathVariable long id) {
+    public Category fetchCategory(@PathVariable long id) {
         return categories.findById(id);
     }
     
