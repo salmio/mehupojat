@@ -28,7 +28,7 @@ public class Product {
     private String description;
 
     /* Reference to the brand of the product */
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.ALL)
     private Brand brand;
 
     /* List of the product categories */
