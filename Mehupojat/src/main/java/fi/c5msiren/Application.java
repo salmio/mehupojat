@@ -79,9 +79,9 @@ public class Application implements CommandLineRunner {
         brands.save(brandA);
         brands.save(brandB);
 
-        Product productA = new Product("Tuote 1", 42.00, "Tuotteen yksi kuvaus", "tempURL", brandA);
-        Product productB = new Product("Tuote 2", 53.00, "Tuotteen kaksi kuvaus", "tempURL", brandB);
-        Product productC = new Product("Tuote 3", 64.00, "Tuotteen kolme kuvaus", "tempURL", brandB);
+        Product productA = new Product("Omenamehu", 2.50, "Omenamehun kuvaus", "http://koti.tamk.fi/~c5msiren/Mehupojat/apple_juice.png", brandA);
+        Product productB = new Product("Banaanimehu", 3.20, "Banaanimehun kuvaus", "http://koti.tamk.fi/~c5msiren/Mehupojat/banana_juice.jpg", brandB);
+        Product productC = new Product("Appelsiinimehu", 4.00, "Appelsiinimehun kuvaus", "http://koti.tamk.fi/~c5msiren/Mehupojat/orange_juice.jpg", brandB);
         productA.setCategories(categoryListOne);
         productB.setCategories(categoryListTwo);
         products.save(productA);
@@ -110,7 +110,6 @@ public class Application implements CommandLineRunner {
     }
 
     //localhost:8080/console JDBC URL: jdbc:h2:mem:testdb
-  
     /**
      * Creates site to connect to embedded database
      * 
