@@ -27,8 +27,11 @@ public class Product {
     /* Attribute containing the description of the product */
     private String description;
 
+    /* Attribute containing the picture URL of the product */
+    private String image_url;
+
     /* Reference to the brand of the product */
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.ALL)
     private Brand brand;
 
     /* List of the product categories */
@@ -45,11 +48,13 @@ public class Product {
      * @param name Name for the product
      * @param price Price for the product
      * @param description Description for the product
+     * @param image_url Url to the product image
      */
-    public Product(String name, double price, String description) {
+    public Product(String name, double price, String description, String image_url) {
         this.name = name;
         this.price = price;
         this.description = description;
+        this.image_url = image_url;
     }
 
     /**
@@ -57,12 +62,14 @@ public class Product {
      * @param name Name for the product
      * @param price Price for the product
      * @param description Description for the product
+     * @param image_url Url to the product image
      * @param brand Products brand
      */
-    public Product(String name, double price, String description, Brand brand) {
+    public Product(String name, double price, String description, String image_url, Brand brand) {
         this.name = name;
         this.price = price;
         this.description = description;
+        this.image_url = image_url;
         this.brand = brand;
     }
 
@@ -71,13 +78,15 @@ public class Product {
      * @param name Name for the product
      * @param price Price for the product
      * @param description Description for the product
+     * @param image_url Url to the product image
      * @param brand Products brand
      * @param categories List of all the product categories
      */
-    public Product(String name, double price, String description, Brand brand, List<Category> categories) {
+    public Product(String name, double price, String description, String image_url, Brand brand, List<Category> categories) {
         this.name = name;
         this.price = price;
         this.description = description;
+        this.image_url = image_url;
         this.brand = brand;
         this.categories = categories;
     }
@@ -143,6 +152,24 @@ public class Product {
      */
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    /**
+     * Getter method for picture
+     *
+     * @return current value of picture URL
+     */
+    public String getImageURL() {
+        return image_url;
+    }
+
+    /**
+     * Setter method for picture URL
+     *
+     * @param picture_url URL to picture that is to be set as products picture
+     */
+    public void setImageURL(String image_url) {
+        this.image_url = image_url;
     }
 
     /**
