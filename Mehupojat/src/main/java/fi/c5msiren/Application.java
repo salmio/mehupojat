@@ -79,9 +79,9 @@ public class Application implements CommandLineRunner {
         brands.save(brandA);
         brands.save(brandB);
 
-        Product productA = new Product("Tuote 1", 42.00, "Tuotteen yksi kuvaus", brandA);
-        Product productB = new Product("Tuote 2", 53.00, "Tuotteen kaksi kuvaus", brandB);
-        Product productC = new Product("Tuote 3", 64.00, "Tuotteen kolme kuvaus", brandB);
+        Product productA = new Product("Tuote 1", 42.00, "Tuotteen yksi kuvaus", "tempURL", brandA);
+        Product productB = new Product("Tuote 2", 53.00, "Tuotteen kaksi kuvaus", "tempURL", brandB);
+        Product productC = new Product("Tuote 3", 64.00, "Tuotteen kolme kuvaus", "tempURL", brandB);
         productA.setCategories(categoryListOne);
         productB.setCategories(categoryListTwo);
         products.save(productA);
