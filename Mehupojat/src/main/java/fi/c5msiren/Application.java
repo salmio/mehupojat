@@ -82,11 +82,22 @@ public class Application implements CommandLineRunner {
         Product productA = new Product("Omenamehu", 2.50, "Omenamehun kuvaus", "http://koti.tamk.fi/~c5msiren/Mehupojat/apple_juice.png", brandA);
         Product productB = new Product("Banaanimehu", 3.20, "Banaanimehun kuvaus", "http://koti.tamk.fi/~c5msiren/Mehupojat/banana_juice.jpg", brandB);
         Product productC = new Product("Appelsiinimehu", 4.00, "Appelsiinimehun kuvaus", "http://koti.tamk.fi/~c5msiren/Mehupojat/orange_juice.jpg", brandB);
+        Product productD = new Product("Omenamehu #2", 2.70, "Omenamehun kuvaus", "http://koti.tamk.fi/~c5msiren/Mehupojat/apple_juice.png", brandB);
+        Product productE = new Product("Banaanimehu #2", 3.50, "Banaanimehun kuvaus", "http://koti.tamk.fi/~c5msiren/Mehupojat/banana_juice.jpg", brandB);
+        Product productF = new Product("Appelsiinimehu #2", 4.50, "Appelsiinimehun kuvaus", "http://koti.tamk.fi/~c5msiren/Mehupojat/orange_juice.jpg", brandB);
+        Product productG = new Product("Omenamehu #3", 3.50, "Omenamehun kuvaus", "http://koti.tamk.fi/~c5msiren/Mehupojat/apple_juice.png", brandB);
+        Product productH = new Product("Banaanimehu #3", 2.50, "Banaanimehun kuvaus", "http://koti.tamk.fi/~c5msiren/Mehupojat/banana_juice.jpg", brandB);
+
         productA.setCategories(categoryListOne);
         productB.setCategories(categoryListTwo);
         products.save(productA);
         products.save(productB);
         products.save(productC);
+        products.save(productD);
+        products.save(productE);
+        products.save(productF);
+        products.save(productG);
+        products.save(productH);
 
         List<Address> addressListA = new ArrayList<>();
         List<Address> addressListB = new ArrayList<>();
