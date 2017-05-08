@@ -30,6 +30,11 @@ a:hover {
     
 }
 
+#login {
+    float: right;
+    margin-top: 28px;
+}
+
 #wrapper {
     min-height: 100%;
     min-width: 540px;
