@@ -1,5 +1,17 @@
 package fi.c5msiren;
 
+import fi.c5msiren.model.User;
+import fi.c5msiren.model.Role;
+import fi.c5msiren.model.Product;
+import fi.c5msiren.model.Category;
+import fi.c5msiren.model.Brand;
+import fi.c5msiren.model.Address;
+import fi.c5msiren.repository.AddressRepository;
+import fi.c5msiren.repository.BrandRepository;
+import fi.c5msiren.repository.CategoryRepository;
+import fi.c5msiren.repository.ProductRepository;
+import fi.c5msiren.repository.RoleRepository;
+import fi.c5msiren.repository.UserRepository;
 import java.util.*;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
