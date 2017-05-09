@@ -1,14 +1,28 @@
 package fi.c5msiren;
 
+import fi.c5msiren.model.User;
+import fi.c5msiren.model.Role;
+import fi.c5msiren.model.Product;
+import fi.c5msiren.model.Category;
+import fi.c5msiren.model.Brand;
+import fi.c5msiren.model.Address;
+import fi.c5msiren.repository.AddressRepository;
+import fi.c5msiren.repository.BrandRepository;
+import fi.c5msiren.repository.CategoryRepository;
+import fi.c5msiren.repository.ProductRepository;
+import fi.c5msiren.repository.RoleRepository;
+import fi.c5msiren.repository.UserRepository;
 import org.h2.server.web.WebServlet;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.boot.web.servlet.ServletRegistrationBean;
+import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.web.support.SpringBootServletInitializer;
 import java.util.*;
 
 /**
@@ -19,7 +33,7 @@ import java.util.*;
  * @since 1.8
  */
 @SpringBootApplication
-public class Application implements CommandLineRunner {
+public class Application extends SpringBootServletInitializer  implements CommandLineRunner {
 
     /**
      * Database attribute containing products
@@ -44,6 +58,17 @@ public class Application implements CommandLineRunner {
      */   
     @Autowired
     private UserRepository users;
+
+    /**
+     * Database attribute containing roles
+     */   
+    @Autowired
+    private RoleRepository roles;
+
+    @Override
+    protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {
+        return application.sources(Application.class);
+    }
 
     /**
      * Starts the spring application
@@ -112,9 +137,14 @@ public class Application implements CommandLineRunner {
         addressListB.add(addressB);
         addressListC.add(addressC);
 
-        User userA = new User("test@email.com", "kalapoliisi", addressListA);
-        User userB = new User("lintumies@hotmale.com", "pyykko", addressListB);
-        User userC = new User("enthusiast@luukku.com", "yuotila", addressListC);
+        Role roleA = new Role("CUSTOMER");
+        Role roleB = new Role("ADMIN");
+        roles.save(roleA);
+        roles.save(roleB);
+
+        User userA = new User("test@email.com", "kalapoliisi", "kalapoliisi", addressListA);
+        User userB = new User("lintumies@hotmale.com", "pyykko", "pyykko", addressListB);
+        User userC = new User("enthusiast@luukku.com", "yuotila", "yuotila", addressListC);
         users.save(userA);
         users.save(userB);
         users.save(userC);
