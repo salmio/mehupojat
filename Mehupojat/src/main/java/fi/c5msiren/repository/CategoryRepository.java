@@ -1,5 +1,6 @@
-package fi.c5msiren;
+package fi.c5msiren.repository;
 
+import fi.c5msiren.model.Category;
 import org.springframework.data.repository.CrudRepository;
 import java.util.List;
 

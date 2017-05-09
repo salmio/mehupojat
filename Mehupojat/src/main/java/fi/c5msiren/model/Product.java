@@ -1,4 +1,4 @@
-package fi.c5msiren;
+package fi.c5msiren.model;
 
 import javax.persistence.*;
 import java.util.*;
