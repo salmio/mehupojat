@@ -21,12 +21,12 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         http.headers().frameOptions().disable();
         http
                 .authorizeRequests()
-                    .antMatchers("/resources/**", "/registration", "/index.html", "/products").permitAll()
+                    .antMatchers("/resources/**", "/registration", "/index.jsp", "/products").permitAll()
                     .anyRequest().authenticated()
                     .and()
                 .formLogin()
                     .loginPage("/login")
-                    .defaultSuccessUrl("/index.html")
+                    .defaultSuccessUrl("/index.jsp")
                     .permitAll()
                     .and()
                 .logout()
