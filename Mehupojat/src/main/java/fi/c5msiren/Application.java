@@ -104,14 +104,14 @@ public class Application extends SpringBootServletInitializer  implements Comman
         brands.save(brandA);
         brands.save(brandB);
 
-        Product productA = new Product("Omenamehu", 2.50, "Omenamehun kuvaus", "http://koti.tamk.fi/~c5msiren/Mehupojat/apple_juice.png", brandA);
-        Product productB = new Product("Banaanimehu", 3.20, "Banaanimehun kuvaus", "http://koti.tamk.fi/~c5msiren/Mehupojat/banana_juice.jpg", brandB);
-        Product productC = new Product("Appelsiinimehu", 4.00, "Appelsiinimehun kuvaus", "http://koti.tamk.fi/~c5msiren/Mehupojat/orange_juice.jpg", brandB);
-        Product productD = new Product("Omenamehu #2", 2.70, "Omenamehun kuvaus", "http://koti.tamk.fi/~c5msiren/Mehupojat/apple_juice.png", brandB);
-        Product productE = new Product("Banaanimehu #2", 3.50, "Banaanimehun kuvaus", "http://koti.tamk.fi/~c5msiren/Mehupojat/banana_juice.jpg", brandB);
-        Product productF = new Product("Appelsiinimehu #2", 4.50, "Appelsiinimehun kuvaus", "http://koti.tamk.fi/~c5msiren/Mehupojat/orange_juice.jpg", brandB);
-        Product productG = new Product("Omenamehu #3", 3.50, "Omenamehun kuvaus", "http://koti.tamk.fi/~c5msiren/Mehupojat/apple_juice.png", brandB);
-        Product productH = new Product("Banaanimehu #3", 2.50, "Banaanimehun kuvaus", "http://koti.tamk.fi/~c5msiren/Mehupojat/banana_juice.jpg", brandB);
+        Product productA = new Product("Omenamehu", 2.50, "Omenamehun kuvaus", 6, "http://koti.tamk.fi/~c5msiren/Mehupojat/apple_juice.png", brandA);
+        Product productB = new Product("Banaanimehu", 3.20, "Banaanimehun kuvaus", 7, "http://koti.tamk.fi/~c5msiren/Mehupojat/banana_juice.jpg", brandB);
+        Product productC = new Product("Appelsiinimehu", 4.00, "Appelsiinimehun kuvaus", 0, "http://koti.tamk.fi/~c5msiren/Mehupojat/orange_juice.jpg", brandB);
+        Product productD = new Product("Omenamehu #2", 2.70, "Omenamehun kuvaus", 4, "http://koti.tamk.fi/~c5msiren/Mehupojat/apple_juice.png", brandB);
+        Product productE = new Product("Banaanimehu #2", 3.50, "Banaanimehun kuvaus", 2, "http://koti.tamk.fi/~c5msiren/Mehupojat/banana_juice.jpg", brandB);
+        Product productF = new Product("Appelsiinimehu #2", 4.50, "Appelsiinimehun kuvaus", 0, "http://koti.tamk.fi/~c5msiren/Mehupojat/orange_juice.jpg", brandB);
+        Product productG = new Product("Omenamehu #3", 3.50, "Omenamehun kuvaus", 3, "http://koti.tamk.fi/~c5msiren/Mehupojat/apple_juice.png", brandB);
+        Product productH = new Product("Banaanimehu #3", 2.50, "Banaanimehun kuvaus", 1, "http://koti.tamk.fi/~c5msiren/Mehupojat/banana_juice.jpg", brandB);
 
         productA.setCategories(categoryListOne);
         productB.setCategories(categoryListTwo);

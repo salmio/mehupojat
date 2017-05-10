@@ -15,6 +15,7 @@ import fi.c5msiren.repository.UserRepository;
 import java.util.*;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.http.MediaType;
 import org.springframework.beans.factory.annotation.Autowired;
 
 /**
@@ -60,6 +61,13 @@ public class MyController {
     @RequestMapping(value = "/products",  method=RequestMethod.POST)
     public void saveProduct(@RequestBody Product p) {
         products.save(p);
+    }
+
+    @RequestMapping(value = "/products/{id}/decrease",  method=RequestMethod.GET)
+    public void productStock(@PathVariable long id) {
+        Product product = products.findById(id);
+        product.setStock(product.getStock() - 1);
+        products.save(product);
     }
 
     /**
