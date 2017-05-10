@@ -15,11 +15,28 @@ import org.springframework.transaction.annotation.Transactional;
 import java.util.HashSet;
 import java.util.Set;
 
+/**
+ * This class acts as a details service for user class
+ *
+ * @author Miika
+ * @version 2017.5.09
+ * @since 1.8
+ */
 @Service
 public class UserDetailsServiceImpl implements UserDetailsService{
+
+    /**
+     * Database attribute containing users
+     */   
     @Autowired
     private UserRepository userRepository;
 
+    /**
+     * Method for creating UserDetails from a user
+     *
+     * @param username Username of the user
+     * @return the userdetails object created from the user
+     */
     @Override
     @Transactional(readOnly = true)
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {

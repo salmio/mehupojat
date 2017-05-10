@@ -12,7 +12,7 @@ import fi.c5msiren.model.User;
 public interface UserService {
 
     /**
-     * Method for saving a user
+     * Method for saving a user to database
      *
      * @param user User to be saved
      */
