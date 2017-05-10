@@ -8,7 +8,7 @@ img {
     src: url('../fonts/Unicorn.otf'); 
 } 
 
-a {
+.productsLink {
     color: #f46e21;
     font-family: 'Unicorn';
     font-size: 24px;
@@ -17,7 +17,7 @@ a {
     display: inline-block;
 }
 
-a:hover {
+.productsLink:hover {
     color: #8cbb7c;
 }
 
@@ -27,8 +27,18 @@ a:hover {
 }
 
 #login {
+    color: #f46e21;
+    font-family: 'Unicorn';
+    font-size: 24px;
+    line-height: 40px;
+    margin: 0px 20px; 
+    display: inline-block;
     float: right;
-    margin-top: 28px;
+    margin-top: 26px;
+}
+
+#login:hover {
+    color: #8cbb7c;
 }
 
 #wrapper {
@@ -41,9 +51,9 @@ a:hover {
     height: 95px;
     width: 100%;
     background-color: #FFF;
-    border-style: solid;
+    /*border-style: solid;
     border-color: #D3D3D3;
-    border-width: 0px 0px 1px 0px;
+    border-width: 0px 0px 1px 0px;*/
 }
 
 .hero-image {
