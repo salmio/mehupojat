@@ -19,7 +19,7 @@
     <body>
         <div id ="wrapper">
             <div id="headerbar">
-                <a href="index.html" id="pagenameLink"><img src="resources/img/mehupojat.png"</a>
+                <a href="index.jsp" id="pagenameLink"><img src="resources/img/mehupojat.png"</a>
                 <a href="" id="productsLink">Linkki #1</a>
                 <a href="">Linkki #2</a>
                 <sec:authorize access="isAuthenticated()">  
