@@ -27,6 +27,9 @@ public class Product {
     /* Attribute containing the description of the product */
     private String description;
 
+    /* Attribute containing the amount of stock */
+    private int stock;
+
     /* Attribute containing the picture URL of the product */
     private String image_url;
 
@@ -50,10 +53,11 @@ public class Product {
      * @param description Description for the product
      * @param image_url Url to the product image
      */
-    public Product(String name, double price, String description, String image_url) {
+    public Product(String name, double price, String description, int stock, String image_url) {
         this.name = name;
         this.price = price;
         this.description = description;
+        this.stock = stock;
         this.image_url = image_url;
     }
 
@@ -65,10 +69,11 @@ public class Product {
      * @param image_url Url to the product image
      * @param brand Products brand
      */
-    public Product(String name, double price, String description, String image_url, Brand brand) {
+    public Product(String name, double price, String description, int stock, String image_url, Brand brand) {
         this.name = name;
         this.price = price;
         this.description = description;
+        this.stock = stock;
         this.image_url = image_url;
         this.brand = brand;
     }
@@ -82,10 +87,11 @@ public class Product {
      * @param brand Products brand
      * @param categories List of all the product categories
      */
-    public Product(String name, double price, String description, String image_url, Brand brand, List<Category> categories) {
+    public Product(String name, double price, String description, int stock, String image_url, Brand brand, List<Category> categories) {
         this.name = name;
         this.price = price;
         this.description = description;
+        this.stock = stock;
         this.image_url = image_url;
         this.brand = brand;
         this.categories = categories;
@@ -152,6 +158,24 @@ public class Product {
      */
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    /**
+     * Getter method for stock amount
+     *
+     * @return current value of stock
+     */
+    public int getStock() {
+        return stock;
+    }
+
+    /**
+     * Setter method for stock amount
+     *
+     * @param stock Stock to be set as products stock amount
+     */
+    public void setStock(int stock) {
+        this.stock = stock;
     }
 
     /**
