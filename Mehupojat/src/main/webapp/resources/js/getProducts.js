@@ -62,6 +62,15 @@ var Result = React.createClass({
 });
 
 var ResultItem = React.createClass({
+    decreaseStock: function() {
+        var formData = JSON.stringify(1);
+        $.ajax({
+            type:"POST",
+            data:formData,
+            url:"/products/" +  this.props.user.id + "/decrease",
+            contentType : "application/json"
+        });  
+    },
     render:function(){
         var camper = this.props.user;
         var productStockStatus;
@@ -72,9 +81,8 @@ var ResultItem = React.createClass({
                 break;
             default:
                 productStockStatus = 
-                                    <button className="btn btn-lg btn-primary btn-block" type="submit">
-                                    Lisää ostoskoriin</button>
-
+                                    <input type="button" className="btn btn-lg btn-primary btn-block"
+                                        value="Lisää ostoskoriin"  onClick={() => this.decreaseStock()} />
         }
 
         return(
@@ -86,7 +94,8 @@ var ResultItem = React.createClass({
                     <div className="col-xs-12"><h4 id="otsikko">Kuvaus:&nbsp;</h4> <p>{camper.description}</p></div>
                     <div className="col-xs-12"><h4 id="otsikko">Brändi:&nbsp;</h4> <p>{camper.brand.name}</p></div>
                     <div className="col-xs-12"><h4 id="otsikko">Varastossa:&nbsp;</h4> <p>{camper.stock}</p></div>
-                    <form method="GET" action={"products/" + camper.id + "/decrease"}>
+                    <form id={"myForm" + camper.id}>
+                        
                         <div className="col-xs-12">{productStockStatus}</div>
                     </form>
                 </div>
