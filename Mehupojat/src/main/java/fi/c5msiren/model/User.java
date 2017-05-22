@@ -154,6 +154,11 @@ public class User {
         this.roles = roles;
     }
 
+    /**
+     * Method for adding one role to user roles
+     *
+     * @param role value to be added to roles
+     */
     public void addRole(Role role) {
         this.roles.add(role);
     }
