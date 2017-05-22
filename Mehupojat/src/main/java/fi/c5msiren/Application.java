@@ -137,14 +137,14 @@ public class Application extends SpringBootServletInitializer  implements Comman
         addressListB.add(addressB);
         addressListC.add(addressC);
 
-        Role roleA = new Role("CUSTOMER");
-        Role roleB = new Role("ADMIN");
+        Role roleA = new Role("ROLE_ADMIN");
+        Role roleB = new Role("ROLE_CUSTOMER");
         roles.save(roleA);
         roles.save(roleB);
 
-        User userA = new User("test@email.com", "kalapoliisi", "kalapoliisi", addressListA);
-        User userB = new User("lintumies@hotmale.com", "pyykko", "pyykko", addressListB);
-        User userC = new User("enthusiast@luukku.com", "yuotila", "yuotila", addressListC);
+        User userA = new User("test@email.com", "kalapoliisi", "kalapoliisi", roleA, addressListA);
+        User userB = new User("lintumies@hotmale.com", "pyykko", "pyykko", roleB, addressListB);
+        User userC = new User("enthusiast@luukku.com", "yuotila", "yuotila", roleB, addressListC);
         users.save(userA);
         users.save(userB);
         users.save(userC);

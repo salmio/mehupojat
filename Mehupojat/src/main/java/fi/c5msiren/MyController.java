@@ -63,10 +63,10 @@ public class MyController {
         products.save(p);
     }
 
-    @RequestMapping(value = "/products/{id}/decrease",  method=RequestMethod.GET)
-    public void productStock(@PathVariable long id) {
+    @RequestMapping(value = "/products/{id}/decrease",  method=RequestMethod.POST)
+    public void productStock(@PathVariable long id, @RequestBody int amount) {
         Product product = products.findById(id);
-        product.setStock(product.getStock() - 1);
+        product.setStock(product.getStock() - amount);
         products.save(product);
     }
 

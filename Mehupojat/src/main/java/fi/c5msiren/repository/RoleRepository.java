@@ -11,4 +11,12 @@ import org.springframework.data.jpa.repository.JpaRepository;
  * @since 1.8
  */
 public interface RoleRepository extends JpaRepository<Role, Long>{
+
+    /**
+     * Custom method declaration for finding a single role by name
+     * 
+     * @param name Role name value which to find by
+     * @return found role corresponding name
+     */
+    Role findByName(String name);
 }
