@@ -1,8 +1,7 @@
 package fi.c5msiren.model;
 
-import java.util.List;
 import javax.persistence.*;
-import java.util.Set;
+import java.util.*;
 
 /**
  * Class represents an User entity in the database
@@ -32,7 +31,7 @@ public class User {
     /* Attribute containing the user roles */
     @ManyToMany
     @JoinTable(name = "user_role", joinColumns = @JoinColumn(name = "user_id"), inverseJoinColumns = @JoinColumn(name = "role_id"))
-    private Set<Role> roles;
+    private Set<Role> roles = new HashSet();
 
     /* Attribute containing a list of all users addresses */
     @ManyToMany(cascade = CascadeType.ALL)

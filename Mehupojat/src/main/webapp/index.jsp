@@ -22,6 +22,9 @@
                 <a href="index.jsp" id="pagenameLink"><img src="resources/img/mehupojat.png"</a>
                 <a href="" class="productsLink">Linkki #1</a>
                 <a href="" class="productsLink">Linkki #2</a>
+                <sec:authorize access="hasRole('ROLE_ADMIN')">
+                    <a href="login.jsp" id="login">ADMIN</a>
+                </sec:authorize>
                 <sec:authorize access="isAuthenticated()">  
                     <a href="login.jsp" id="login">
                     <sec:authentication property="principal.username"/></a>
