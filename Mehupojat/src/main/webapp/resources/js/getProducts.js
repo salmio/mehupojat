@@ -61,6 +61,7 @@ var Result = React.createClass({
     }
 });
 
+
 var ResultItem = React.createClass({
     decreaseStock: function() {
         var formData = JSON.stringify(1);
@@ -69,7 +70,8 @@ var ResultItem = React.createClass({
             data:formData,
             url:"/products/" +  this.props.user.id + "/decrease",
             contentType : "application/json"
-        });  
+        });
+        location.reload();
     },
     render:function(){
         var camper = this.props.user;
@@ -84,6 +86,7 @@ var ResultItem = React.createClass({
                 productStockStatus = 
                                     <input type="button" className="btn btn-lg btn-primary btn-block"
                                         value="Lisää ostoskoriin"  onClick={() => this.decreaseStock()} />
+                break;
         }
 
         return(
