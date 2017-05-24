@@ -111,12 +111,33 @@ img {
     padding-bottom:110px; /* Height of the footer element + little bit playarea */
 }
 
+#hinta {
+    color: red;
+    font-size: 16px;
+    font-weight: bold;
+    float: right;
+}
+
+#varasto {
+    font-weight: bold;
+    font-size: 16px;
+}
+
+#tuotekuvaus {
+    height: 160px;
+}
+
+#graybutton {
+    background-color: gray !important;
+    border-color: gray !important;
+}
+
 .product {
     /*border: 1px solid #ccc;*/
     background-color: #fafafa;
     width: 100%;
     margin: 5px 4% 5px 4%;
-    height: 600px;
+    height: 520px;
     overflow: hidden;
     border-radius: 4px;
     
@@ -150,23 +171,22 @@ img {
 
 .col-xs-12 img {
     display: block;
-    margin: 0px auto 10px;
+    margin: 10px auto 10px;
 }
 
 .col-xs-12 h4 {
-    display: block;
+    display: inline-block;
     color: #111;
     font-family: 'Helvetica Neue', sans-serif;
     font-size: 18px;
     letter-spacing: -1px;
     line-height: 1;
-    text-align: center;
     margin: 0px 0px 5px 0px;
 }
 
 .col-xs-12 p {
-    display: block;
-    text-align: center;
+    display: inline-block;
+    text-align: justify;
     margin: 0 0 15px;
 }
 
@@ -177,6 +197,5 @@ img {
     font-size: 20px; 
     font-weight: bold;
     line-height: 1;
-    text-align: center; 
     margin: 15px 5px 15px 5px;
 }
