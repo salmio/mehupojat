@@ -8,16 +8,12 @@
     <meta name="author" content="">
 
     <title>Kirjaudu sisään</title>
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Chewy" rel="stylesheet">
 
     <link href="${contextPath}/resources/css/bootstrap.min.css" rel="stylesheet">
 
     <link rel="stylesheet" type="text/css" href="resources/css/login.css">
-
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
 </head>
 
 <body>
@@ -26,8 +22,7 @@
 
     <div id="headerbar">
         <a href="index.jsp" id="pagenameLink"><img src="resources/img/mehupojat.png"</a>
-        <a href="" class="productsLink">Linkki #1</a>
-        <a href="" class="productsLink">Linkki #2</a>    
+        <a href="" class="productsLink">Tuotteet</a> 
     </div>
 
     <form method="POST" action="${contextPath}/login" class="form-signin">
@@ -46,6 +41,12 @@
         </div>
 
     </form>
+
+    <div id="footer">
+        <div class="container text-center">
+            <p>Mehuboys owned by ASDSADASDSADS company</p>
+        </div>
+    </div>
 
 </div>
 <!-- /container -->

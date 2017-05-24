@@ -8,53 +8,61 @@ img {
     src: url('../fonts/Unicorn.otf'); 
 } 
 
-button {
+
+.btn {
+    /* Override boostrap default styling for shopping cart buttons */
     background-color: #f46e21 !important;
     border-color: #f46e21 !important;
 }
 
-button:hover {
-    background-color: #8cbb7c !important;
-    border-color: #8cbb7c !important;
+.btn:hover {
+    /* Override boostrap default styling for shopping cart buttons */
+    background-color: #ff823a !important;
+    border-color: #ff823a !important;
 }
 
 
 .productsLink {
     color: #f46e21;
-    font-family: 'Unicorn';
-    font-size: 24px;
+    font-family: 'Chewy', cursive;
+    font-size: 28px;
     line-height: 40px;
-    margin: 0px 20px; 
+    margin: 28px 20px 0px 20px; 
     display: inline-block;
+    position: absolute;
 }
 
 .productsLink:hover {
-    color: #8cbb7c;
+    color: #ff823a;
 }
 
 #pagenameLink { 
     margin: 8px 20px; 
     display: inline-block;
+    border-style: dashed;
+    padding-right: 20px;
+    border-width: 0px 1px 0px 0px;
+    border-color: #ff823a;
 }
 
 #login {
     color: #f46e21;
-    font-family: 'Unicorn';
-    font-size: 24px;
+    font-family: 'Chewy', cursive;
+    font-size: 28px;
     line-height: 40px;
     margin: 0px 20px; 
     display: inline-block;
     float: right;
-    margin-top: 26px;
+    margin-top: 28px;
 }
 
 #login:hover {
-    color: #8cbb7c;
+    color: #ff823a;
 }
 
 #wrapper {
     min-height: 100%;
-    min-width: 540px;
+    min-width: 640px;
     position: relative;
 }
 
@@ -93,7 +101,7 @@ button:hover {
 }
 
 .hero-text h1 {
-    color: #f46e21;
+    color: #68bc4b;
     font-family: 'Unicorn';
     font-size: 72px;
     width: 550px;
@@ -103,12 +111,33 @@ button:hover {
     padding-bottom:110px; /* Height of the footer element + little bit playarea */
 }
 
+#hinta {
+    color: red;
+    font-size: 16px;
+    font-weight: bold;
+    float: right;
+}
+
+#varasto {
+    font-weight: bold;
+    font-size: 16px;
+}
+
+#tuotekuvaus {
+    height: 160px;
+}
+
+#graybutton {
+    background-color: gray !important;
+    border-color: gray !important;
+}
+
 .product {
     /*border: 1px solid #ccc;*/
     background-color: #fafafa;
     width: 100%;
     margin: 5px 4% 5px 4%;
-    height: 600px;
+    height: 520px;
     overflow: hidden;
     border-radius: 4px;
     
@@ -142,23 +171,22 @@ button:hover {
 
 .col-xs-12 img {
     display: block;
-    margin: 0px auto 10px;
+    margin: 10px auto 10px;
 }
 
 .col-xs-12 h4 {
-    display: block;
+    display: inline-block;
     color: #111;
     font-family: 'Helvetica Neue', sans-serif;
     font-size: 18px;
     letter-spacing: -1px;
     line-height: 1;
-    text-align: center;
     margin: 0px 0px 5px 0px;
 }
 
 .col-xs-12 p {
-    display: block;
-    text-align: center;
+    display: inline-block;
+    text-align: justify;
     margin: 0 0 15px;
 }
 
@@ -169,6 +197,5 @@ button:hover {
     font-size: 20px; 
     font-weight: bold;
     line-height: 1;
-    text-align: center; 
     margin: 15px 5px 15px 5px;
 }

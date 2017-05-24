@@ -80,6 +80,30 @@ sub {
     bottom: -.25em
 }
 
+@media (min-width: 700px) {
+    img {
+        width: 200px;
+    }
+}
+
+@media (min-width: 768px) {
+    img {
+        width: 180px;
+    }
+}
+
+@media (min-width: 992px) {
+    img {
+        width: 180px;
+    }
+}
+
+@media (min-width: 1200px) {
+    img {
+        width: 200px;
+    }
+}
+
 img {
     border: 0
 }

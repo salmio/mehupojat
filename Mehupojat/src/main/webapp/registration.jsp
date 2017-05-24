@@ -15,7 +15,9 @@
     <meta name="author" content="">
 
     <title>Luo asiakastili</title>
-
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Chewy" rel="stylesheet">
+    
     <link href="${contextPath}/resources/css/bootstrap.min.css" rel="stylesheet">
     <link href="${contextPath}/resources/css/login.css" rel="stylesheet">
 
@@ -32,8 +34,7 @@
 
     <div id="headerbar">
         <a href="index.jsp" id="pagenameLink"><img src="resources/img/mehupojat.png"</a>
-        <a href="" class="productsLink">Linkki #1</a>
-        <a href="" class="productsLink">Linkki #2</a>    
+        <a href="" class="productsLink">Tuotteet</a>  
     </div>
 
 
@@ -64,6 +65,12 @@
 
         <button class="btn btn-lg btn-primary btn-block" type="submit">Lähetä</button>
     </form:form>
+
+    <div id="footer">
+        <div class="container text-center">
+            <p>Mehuboys owned by ASDSADASDSADS company</p>
+        </div>
+    </div>
 
 </div>
 <!-- /container -->

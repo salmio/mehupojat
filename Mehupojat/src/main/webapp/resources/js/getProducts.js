@@ -61,6 +61,7 @@ var Result = React.createClass({
     }
 });
 
+
 var ResultItem = React.createClass({
     decreaseStock: function() {
         var formData = JSON.stringify(1);
@@ -69,7 +70,8 @@ var ResultItem = React.createClass({
             data:formData,
             url:"/products/" +  this.props.user.id + "/decrease",
             contentType : "application/json"
-        });  
+        });
+        location.reload();
     },
     render:function(){
         var camper = this.props.user;
@@ -77,25 +79,24 @@ var ResultItem = React.createClass({
 
         switch (camper.stock) {
             case 0:
-                productStockStatus = ""
+                productStockStatus = <input type="button" id="graybutton" className="btn btn-lg btn-primary btn-block"
+                                        value="Lisää ostoskoriin" />
                 break;
             default:
                 productStockStatus = 
                                     <input type="button" className="btn btn-lg btn-primary btn-block"
                                         value="Lisää ostoskoriin"  onClick={() => this.decreaseStock()} />
+                break;
         }
 
         return(
             <div className="col-xs-6 col-sm-4 col-md-3">
                 <div className="product">
-                    <div className="col-xs-12"><h3>{camper.name}</h3></div>
                     <div className="col-xs-12"><img src={camper.imageURL} /></div>
-                    <div className="col-xs-12"><h4 id="otsikko">Hinta:&nbsp;</h4> <p>{camper.price} €</p></div>
-                    <div className="col-xs-12"><h4 id="otsikko">Kuvaus:&nbsp;</h4> <p>{camper.description}</p></div>
-                    <div className="col-xs-12"><h4 id="otsikko">Brändi:&nbsp;</h4> <p>{camper.brand.name}</p></div>
-                    <div className="col-xs-12"><h4 id="otsikko">Varastossa:&nbsp;</h4> <p>{camper.stock}</p></div>
+                    <div className="col-xs-12"><h3>{camper.name}</h3></div>
+                    <div className="col-xs-12" id="tuotekuvaus"><p>{camper.description}</p></div>
+                    <div className="col-xs-12"><p id="varasto">Varastossa: {camper.stock}</p> <p id="hinta">€ {camper.price}</p> </div>
                     <form id={"myForm" + camper.id}>
-                        
                         <div className="col-xs-12">{productStockStatus}</div>
                     </form>
                 </div>
