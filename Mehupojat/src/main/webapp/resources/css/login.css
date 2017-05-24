@@ -3,8 +3,11 @@ img {
     max-height: 200px;
 }
 
-body {
+html, body {
     background-color: #FFF;
+    margin:0;
+    padding:0;
+    height:100%;
 }
 
 @font-face { 
@@ -26,7 +29,7 @@ body {
     color: #ff823a;
 }
 
-#wrapper {
+.wrapper {
     min-height: 100%;
     min-width: 640px;
     position: relative;
