@@ -104,14 +104,22 @@ public class Application extends SpringBootServletInitializer  implements Comman
         brands.save(brandA);
         brands.save(brandB);
 
-        Product productA = new Product("Omenamehu", 2.50, "Omenamehun kuvaus", 6, "http://koti.tamk.fi/~c5msiren/Mehupojat/apple_juice.png", brandA);
-        Product productB = new Product("Banaanimehu", 3.20, "Banaanimehun kuvaus", 7, "http://koti.tamk.fi/~c5msiren/Mehupojat/banana_juice.jpg", brandB);
-        Product productC = new Product("Appelsiinimehu", 4.00, "Appelsiinimehun kuvaus", 0, "http://koti.tamk.fi/~c5msiren/Mehupojat/orange_juice.jpg", brandB);
-        Product productD = new Product("Omenamehu #2", 2.70, "Omenamehun kuvaus", 4, "http://koti.tamk.fi/~c5msiren/Mehupojat/apple_juice.png", brandB);
-        Product productE = new Product("Banaanimehu #2", 3.50, "Banaanimehun kuvaus", 2, "http://koti.tamk.fi/~c5msiren/Mehupojat/banana_juice.jpg", brandB);
-        Product productF = new Product("Appelsiinimehu #2", 4.50, "Appelsiinimehun kuvaus", 0, "http://koti.tamk.fi/~c5msiren/Mehupojat/orange_juice.jpg", brandB);
-        Product productG = new Product("Omenamehu #3", 3.50, "Omenamehun kuvaus", 3, "http://koti.tamk.fi/~c5msiren/Mehupojat/apple_juice.png", brandB);
-        Product productH = new Product("Banaanimehu #3", 2.50, "Banaanimehun kuvaus", 1, "http://koti.tamk.fi/~c5msiren/Mehupojat/banana_juice.jpg", brandB);
+        Product productA = new Product("Omenamehu", 2.50, "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam placerat ante dolor, " + 
+            "nec sollicitudin leo tempor sed. Donec facilisis auctor lorem ac rutrum. ", 6, "http://koti.tamk.fi/~c5msiren/Mehupojat/apple_juice.png", brandA);
+        Product productB = new Product("Banaanimehu", 3.20, "Quisque eget arcu volutpat, tincidunt risus vitae, elementum turpis. Integer feugiat eros " +
+            "sit amet vehicula posuere.", 7, "http://koti.tamk.fi/~c5msiren/Mehupojat/banana_juice.jpg", brandB);
+        Product productC = new Product("Appelsiinimehu", 4.00, "Ut id lacinia metus. Etiam interdum nibh ac neque vehicula volutpat. Nunc ut metus finibus, " +
+            "dictum odio non, venenatis lectus.", 0, "http://koti.tamk.fi/~c5msiren/Mehupojat/orange_juice.jpg", brandB);
+        Product productD = new Product("Omenamehu 2", 2.70, "Maecenas elementum dignissim venenatis. Curabitur eget luctus turpis. " +
+            "Morbi dictum elit sem.", 4, "http://koti.tamk.fi/~c5msiren/Mehupojat/apple_juice.png", brandB);
+        Product productE = new Product("Banaanimehu 2", 3.50, "Sed id lacus tellus. Cras vitae mauris a mi cursus laoreet. " +
+            "Proin viverra non diam a mollis.", 2, "http://koti.tamk.fi/~c5msiren/Mehupojat/banana_juice.jpg", brandB);
+        Product productF = new Product("Appelsiinimehu 2", 4.50, "Pellentesque in accumsan purus, a molestie felis. Suspendisse nunc magna, " +
+            "mollis a luctus id, faucibus sed orci.", 0, "http://koti.tamk.fi/~c5msiren/Mehupojat/orange_juice.jpg", brandB);
+        Product productG = new Product("Omenamehu 3", 3.50, "Fusce euismod in purus sit amet volutpat. Pellentesque habitant morbi tristique senectus et " +
+            "netus et malesuada fames ac turpis egestas. ", 3, "http://koti.tamk.fi/~c5msiren/Mehupojat/apple_juice.png", brandB);
+        Product productH = new Product("Banaanimehu 3", 2.50, "Mauris placerat rhoncus sem, non viverra enim ullamcorper eget. Quisque suscipit, justo in " +
+            "elementum egestas, urna turpis convallis diam, nec suscipit arcu urna nec arcu.", 1, "http://koti.tamk.fi/~c5msiren/Mehupojat/banana_juice.jpg", brandB);
 
         productA.setCategories(categoryListOne);
         productB.setCategories(categoryListTwo);
