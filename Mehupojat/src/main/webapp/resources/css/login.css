@@ -10,31 +10,35 @@ body {
 @font-face { 
     font-family: Unicorn; 
     src: url('../fonts/Unicorn.otf'); 
-} 
+}
 
 .productsLink {
-
     color: #f46e21;
-    font-family: 'Unicorn';
-    font-size: 24px;
+    font-family: 'Chewy', cursive;
+    font-size: 28px;
     line-height: 40px;
-    margin: 0px 20px; 
+    margin: 28px 20px 0px 20px; 
     display: inline-block;
+    position: absolute;
 }
 
 .productsLink:hover {
-    color: #8cbb7c;
+    color: #ff823a;
 }
 
 #wrapper {
     min-height: 100%;
-    min-width: 540px;
+    min-width: 640px;
     position: relative;
 }
 
 #pagenameLink { 
     margin: 8px 20px; 
     display: inline-block;
+    border-style: dashed;
+    padding-right: 20px;
+    border-width: 0px 1px 0px 0px;
+    border-color: #ff823a;
 }
 
 #headerbar {
@@ -45,6 +49,20 @@ body {
 
 h2 {
     font-size: 28px;
+}
+
+#footer {
+    background-color: #8cbb7c;
+    height: 100px;
+    width: 100%;
+    position:absolute;
+    bottom:0;
+    left:0;
+}
+
+#footer p {
+    color: #FFFFFF;
+    margin-top: 45px;
 }
 
 .form-signin {

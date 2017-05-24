@@ -3,6 +3,8 @@
 <html>
     <head>
         <title>Mehupojat</title> 
+        <!-- Fonts -->
+        <link href="https://fonts.googleapis.com/css?family=Chewy" rel="stylesheet">
         <!-- Bootstrap CSS file -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <!-- My CSS file -->
@@ -20,8 +22,7 @@
         <div id ="wrapper">
             <div id="headerbar">
                 <a href="index.jsp" id="pagenameLink"><img src="resources/img/mehupojat.png"</a>
-                <a href="" class="productsLink">Linkki #1</a>
-                <a href="" class="productsLink">Linkki #2</a>
+                <a href="" class="productsLink">Tuotteet</a>
                 <sec:authorize access="hasRole('ROLE_ADMIN')">
                     <a href="login.jsp" id="login">ADMIN</a>
                 </sec:authorize>
